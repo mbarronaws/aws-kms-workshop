@@ -59,7 +59,7 @@ The command should fail because you do not have permissions.
 
 ![alt text](/res/screenshot1.png)
 
-NOTE: This is NOT a very restrictive policy and not something you are likely to do in the real world (except in a test, lab, or demo account.) You will make it more restrictive later in the workshop. This policy allows an administrator (or power user) to manage and ues all aspects of KMS except any permissions on specific keys. 
+NOTE: This is NOT a very restrictive policy and not something you are likely to do in the real world (except in a test, lab, or demo account.) You will make it more restrictive later in the workshop. This policy allows an administrator (or power user) to manage and use all aspects of KMS except any permissions on specific keys. 
 
 ![alt text](/res/screenshot2.png)
 
