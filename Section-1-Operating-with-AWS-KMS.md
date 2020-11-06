@@ -303,9 +303,10 @@ All going well, the above command must have failed with the following error mess
 ```
 when calling the ImportKeyMaterial operation: User: arn:aws:sts:::assumed-role/is not authorized to perform: kms:ImportKeyMaterial on resource: arn:aws:kms:eu-west-1:account-id:key/key-id
 ```
-As you can read in the error message, even though our instance has a "Power user" role, it is still missing some capabilities. We are following Least Privilege practices, therefore we are only providing the role the permissions it needs. In this case, we need to provide it with access to the "**ImportKeyMaterial**" operation.
+As you can read in the error message, even though our instance has a "Power user" role, it is still missing some capabilities. We are following Least Privilege practices, therefore we are only providing the role the permissions it needs. In this case, we need to provide it with access to the "**ImportKeyMaterial**" operation. 
 
-We need to go back to the IAM service into the AWS console and add this permission to the role we are working with "**KMSWorkshop-InstanceInitRole**".  
+Add this permission to the role we are working with "**KMSWorkshop-InstanceInitRole**".  
+
 Go back to the console, navigate to the IAM service. Look and click on the left column, the  "**Policies**" section. Then hit "**Create Policy**" button. Search and select for the service "KMS" among all displayed on the screen. You will land in  the policy creator/editor for KMS, as in image below: 
 
 
