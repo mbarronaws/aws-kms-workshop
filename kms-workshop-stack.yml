@@ -75,7 +75,7 @@ Resources:
             - "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
           RoleName: !Join
             - ''
-            - - 'kmslabrole1-'
+            - - 'MSWorkshop-PublicInstanceInitRole-'
               - !Ref 'AWS::AccountId'
 
   EC2ToKMSRole:
@@ -98,7 +98,7 @@ Resources:
             - "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
           RoleName: !Join
             - ''
-            - - 'kmslabrole2-'
+            - - 'KMSWorkshop-InstanceInitRole-'
               - !Ref 'AWS::AccountId'
 
   IAMS3InstanceProfile:
