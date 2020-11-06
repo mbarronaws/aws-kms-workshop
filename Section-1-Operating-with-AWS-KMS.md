@@ -415,7 +415,7 @@ $ aws kms enable-key-rotation --key-id your-key-id
 
 This enables automatic rotation of the CMK, that will happen in 365 days since the command executed, this is: 1 year from now.
 
-It turns out that the role our instance uses does not have permissions to rotate keys or update aliases. You need to follow the same steps you followed when providing permissions to import keys to the role. This is: create a policy for AWS KMS service that allows you update aliases and then attach it to the role. Also, this policy should allow to disable, enable, schedule key rotation, deletion, and delete CMKs; we need these permissions for the next step, so it is wise adding them now.
+It turns out that the role our instance uses does not have permissions to rotate keys or update aliases. You need to follow the same steps you followed when providing permissions to import keys to the role. This is: create a policy for AWS KMS service that allows you update aliases and then attach it to the role. Also, this policy should allow to enable key rotation, schedule deletion, and delete CMKs; we need these permissions for the next step, so it is wise adding them now.
 
 See image below.
 
