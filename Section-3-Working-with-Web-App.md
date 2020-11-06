@@ -21,11 +21,13 @@ Basically, you need to go back to the AWS console, in the services area navigate
 
 As we did in the previous section, click on new "**Create Policy**", Select KMS as the service, go to the Actions area.
 
-In the "List" and "Read" sections, select **ListAliases, ListKeys, DescribeKey, GetPublicKey**
+In the "List" and "Read" sections, select **ListAliases, ListKeys, DescribeKey, GetPublicKey** and **Any** as resource. 
+
+NOTE: If you have the ARN of the key created in a previous step, you could restrict the resource this server is allowed to use here.
 
 ![alt text](/res/screenshot4.png)
 
-<**Figure-2**>
+<**Figure-1**>
 
 In the "Write" section, select "**GenerateDataKey**" operation. Additionally select "**Encrypt**", "**Decrypt**" and the tagging operations **as you can see in image below**, we will need them for the nexts steps. and "**Any**" as resource. 
 
