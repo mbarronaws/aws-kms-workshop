@@ -15,6 +15,8 @@ To monitor that activity we will use the AWS service [AWS CloudTrail](https://aw
 AWS KMS is integrated with [AWS CloudTrail](https://aws.amazon.com/cloudtrail/). AWS CloudTrail is a service that will provide us with a record of actions performed by a user, role, or an AWS service in AWS KMS.
 CloudTrail captures all API calls for AWS KMS as events, including calls from the AWS KMS console and from code calls to the AWS KMS APIs.
 
+***In Session Manager, disconnect from the Public EC2 instance, and connect to the Private EC2***
+
 In order to see how CloudTrail logs this information, let's first create a data key with the corresponding AWS KMS command we have used before a few times:
 
 ```
