@@ -21,7 +21,7 @@ Use [this link to review the Security Groups documentation](https://docs.aws.ama
 
 Next, we need to repeat the steps in Environment Setup to attach the appropriate KMS policy to the instance profile. In a separate tab, open the IAM console, and create a restrictive KMS policy with the following permissions, then attach it to the KMSWorkshop-PublicInstanceInitRole.
 
-Basically, you need to go back to the AWS console, in the services area navigate to IAM and go to "**Policies**". We are going to create a new policy and attach it to the Power user role.
+Basically, you need to go back to the AWS console, in the services area navigate to IAM and go to "**Policies**". We are going to create a new policy and attach it to the role.
 
 As we did in the previous section, click on new "**Create Policy**", Select KMS as the service, go to the Actions area.
 
