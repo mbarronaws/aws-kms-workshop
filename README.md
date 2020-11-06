@@ -31,8 +31,8 @@ The workshop is mostly practical and will operate in AWS KMS using the AWS CLI (
 In order to set up the working environment for the workshop, you need the following:
 
 * An AWS account.
-* An user with enough permissions to generate policies and create/modify roles in IAM.
-* An user with permissions to run CloudFormation templates and launch EC2 instances.
+* A user with enough permissions to generate policies and create/modify roles in IAM.
+* A user with permissions to run CloudFormation templates and launch EC2 instances.
 * The cloudformation template included with this workshop (kms-workshop-stack.yml)
 
 AWS KMS prior knowledge is not really needed, but if would be great if you take a look into this brief introduction:
