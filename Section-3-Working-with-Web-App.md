@@ -44,7 +44,7 @@ In the "Write" section, select "**GenerateDataKey**" operation. Additionally sel
 
 Click on "**Review Policy**" and then give the policy a name, for example "**KMSWorkshop-WebServerPermissions**".
 
-You can click now in "**Create Policy**". Once created, attach it to the role **KMSWorkshop-PublicInstanceInitRole**.
+Click on "**Create Policy**". Once created, attach it to the role **KMSWorkshop-PublicInstanceInitRole**.
 
 Next, reopen Session Manager, click Start Session, and connect to the **Public EC2 instance**
 
