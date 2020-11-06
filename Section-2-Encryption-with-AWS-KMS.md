@@ -6,10 +6,10 @@ Envelope encryption is the main encryption vehicle for AWS services using AWS KM
 
 The section is divided in the following parts:
 
-* [How Envelope Encryption works in practice](https://github.com/aws-samples/aws-kms-workshop/blob/master/Section-2-Encryption-with-AWS-KMS.md#how-envelope-encryption-works-in-practice)
-* [Envelope encryption. Server Side Encryption](https://github.com/aws-samples/aws-kms-workshop/blob/master/Section-2-Encryption-with-AWS-KMS.md#envelope-encryption-server-side-encryption)
-* [Envelope encryption. Client Side Encryption](https://github.com/aws-samples/aws-kms-workshop/blob/master/Section-2-Encryption-with-AWS-KMS.md#envelope-encryption-client-side-encryption)
-* [Direct Encryption with AWS KMS](https://github.com/aws-samples/aws-kms-workshop/blob/master/Section-2-Encryption-with-AWS-KMS.md#encryption-using-aws-kms-with-no-data-key)
+* [How Envelope Encryption works in practice](https://github.com/mbarronaws/aws-kms-workshop/blob/master/Section-2-Encryption-with-AWS-KMS.md#how-envelope-encryption-works-in-practice)
+* [Envelope encryption. Server Side Encryption](https://github.com/mbarronaws/aws-kms-workshop/blob/master/Section-2-Encryption-with-AWS-KMS.md#envelope-encryption-server-side-encryption)
+* [Envelope encryption. Client Side Encryption](https://github.com/mbarronaws/aws-kms-workshop/blob/master/Section-2-Encryption-with-AWS-KMS.md#envelope-encryption-client-side-encryption)
+* [Direct Encryption with AWS KMS](https://github.com/mbarronaws/aws-kms-workshop/blob/master/Section-2-Encryption-with-AWS-KMS.md#encryption-using-aws-kms-with-no-data-key)
 
 ---
 
