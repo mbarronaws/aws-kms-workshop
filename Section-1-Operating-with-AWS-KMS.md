@@ -150,7 +150,7 @@ The ARN of the key and its status ("Enabled", "Disabled") are highly relevant to
 
 If you go back to the KMS console and navigate to Customer Managed Keys, the key you have just created is already listed there. However, as we used the create-key command without parameters, it does not contain any alias to display and looks like its alias is empty. See image below the region selection and the blank alias name.
 
-![Figure-15](/res/S1F15.png)
+![Figure-15](/res/screenshot7.png)
 <**Figure-15**>
 
 
@@ -166,7 +166,7 @@ $ aws kms create-alias --alias-name alias/FirstCMK --target-key-id 'your-key-id'
 
 If you look now in the console, the CMK you just created displays now the right alias. 
 
-![Figure-5](/res/S1F5%20Alias.png)
+![Figure-5](/res/screenshot8.png)
 <**Figure-5**>
 
 
