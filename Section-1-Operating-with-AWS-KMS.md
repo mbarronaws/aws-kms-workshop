@@ -65,11 +65,7 @@ Logging into the AWS console, [click here](https://console.aws.amazon.com/?nc2=h
 <**Figure-1**>
 
 
-Search for the role that has been set up and attached to the instance by the CloudFormation template, its name is **KMSWorkshop-InstanceInitRole**. 
-
-![alt text](/res/S1F2%20KMSinitRole.png)
-
-<**Figure-2**>
+Search for the role that has been set up and attached to the instance by the CloudFormation template, its name is **kmslabrole2-accountid**. 
 
 
 Click on the role and then on "**Attach Policies**" button, we are going to provide permissions so the instance can create Keys. A new screen where you can now search for Policies will appear.
