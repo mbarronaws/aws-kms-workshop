@@ -15,7 +15,11 @@ this section has the following parts:
 
 The Web App is very simple python web server that works as a shared file server, for internal employees for example. It allows to upload and download files to/from  S3. For downloads the Web App keeps a local file in the instance where Web App is running, prefixing the file with "localfile-". Remenber, our instance has a role with a policy attached to it that allow to read/write from S3.
 
-First, we need to repeat the steps in Environment Setup to attach the appropriate KMS policy to the instance profile. In a separate tab, open the IAM console, and create a restrictive KMS policy with the following permissions, then attach it to the KMSWorkshop-PublicInstanceInitRole.
+First, modify the security group associated with the server to ensure HTTP traffic is allowed. Add an ingress rule to the security group attached to the public instance allowing port 80 from your IP address (lookup your public IPv4 address) 
+
+Use [this link to review the Security Groups documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html). 
+
+Next, we need to repeat the steps in Environment Setup to attach the appropriate KMS policy to the instance profile. In a separate tab, open the IAM console, and create a restrictive KMS policy with the following permissions, then attach it to the KMSWorkshop-PublicInstanceInitRole.
 
 Basically, you need to go back to the AWS console, in the services area navigate to IAM and go to "**Policies**". We are going to create a new policy and attach it to the Power user role.
 
@@ -66,10 +70,6 @@ $ sudo wget  https://raw.githubusercontent.com/aws-samples/aws-kms-workshop/mast
 ```
 
 You have downloaded a python application, named "**WebApp.py**", that will be our test Web App.
-
-**Note:** Modify the security group associated with the server, ensure HTTP traffic is allowed. Add an ingress rule to the security group attached to the public instance allowing port 80 from your IP address (lookup your public IPv4 address) 
-
-Use [this link to review the Security Groups documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html). 
 
 We will need to obtain the instance IP to connect to it from the Internet. We will get it from the metadata of the instance. If you need more information about instance metadata, please look into this [section of the AWS documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html).
 
