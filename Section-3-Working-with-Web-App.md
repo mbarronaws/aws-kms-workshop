@@ -251,7 +251,7 @@ This has policy has two important effects (more information in [this link](https
 * Enables IAM policies to allow access to the CMK. Giving the AWS account full access to the CMK does this; it enables you to use IAM policies to give IAM users and roles in the account access to the CMK. It does not by itself give any IAM users or roles access to the CMK, but it enables you to use IAM policies to do so.
 
 Let's modify the permission of the role assigned to the instance, **allowing it only to encrypt, but not decrypt**.
-Let's use the console. Open the AWS Console. Navigate to IAM service, left column "Roles" and search for the role currently assigned to the instance: **KMSWorkshop-InstanceInitRole**. 
+Let's use the console. Open the AWS Console. Navigate to IAM service, left column "Roles" and search for the role currently assigned to the instance: **KMSWorkshop-PublicInstanceInitRole**. 
 
 
 Within the role, locate the policy we attached when working in the second section of the workshop, we named it "**KMSWorkshop-AditionalPermissions**". Click the button "**Edit Policy**". Expand the Actions-Access Level-Write section and remove the check box on "**Decrypt**". Review policy and save it.
