@@ -426,9 +426,7 @@ See image below.
 
 For resources select both "**alias**" and "**key**". You can name the policy "**KMSWorkshop-RotationDisableOps**". 
 
-Try the command again after you attached the policy to the role. All the applications that were using "FirstCMK" key alias, are now using the new key. In this way, we did not have to manually change the "KeyId" or key ARN one by one in all occurrences of our code were the CMK is invoked. 
-
-At this point of the workshop you should be able to do it with no issues. One tip: Update aliases, enable and disable key and delete operation are part of the Write operations of AWS KMS.
+Try the command again after you attached the policy to the role.
 
 Another way to rotate the CMKs built with AWS key material is to generate a new key.
 Then, to use then new CMK after rotation you might need to replace the information on our applications to point to this new key one by one every place in the application's code. However, it is more efficient work with aliases, as we explained before, and to update the CMK alias to point to the new key just created. Let's do it:
@@ -445,6 +443,10 @@ You will obtain a response with a new KeyID and a new Key ARN. We can update the
 ```
 $ aws kms update-alias --alias alias/FirstCMK --target-key-id KeyId
 ```
+
+All the applications that were using "FirstCMK" key alias, are now using the new key. In this way, we did not have to manually change the "KeyId" or key ARN one by one in all occurrences of our code were the CMK is invoked.
+
+At this point of the workshop you should be able to do it with no issues. One tip: Update aliases, enable and disable key and delete operation are part of the Write operations of AWS KMS.
 
 The old key remains in AWS KMS (until you delete it). When you use the CMK to decrypt, AWS KMS uses the backing key that was used to encrypt, this is, for example, if you needed to decrypt some encrypted data previous to the alias change. It will happen automatically.  More information about Key Rotation in [this section](https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html) of AWS KMS documentation.
 
