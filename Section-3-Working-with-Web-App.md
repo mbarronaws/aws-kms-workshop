@@ -20,16 +20,23 @@ First, we need to repeat the steps in Environment Setup to attach the appropriat
 Basically, you need to go back to the AWS console, in the services area navigate to IAM and go to "**Policies**". We are going to create a new policy and attach it to the Power user role.
 
 As we did in the previous section, click on new "**Create Policy**", Select KMS as the service, go to the Actions area.
+
+In the "List" and "Read" sections, select **ListAliases, ListKeys, DescribeKey, GetPublicKey**
+
+![alt text](/res/screenshot4.png)
+
+<**Figure-2**>
+
 In the "Write" section, select "**GenerateDataKey**" operation. Additionally select "**Encrypt**", "**Decrypt**" and the tagging operations **as you can see in image below**, we will need them for the nexts steps. and "**Any**" as resource. 
 
 ![alt text](/res/S2F16.png)
 
-<**Figure-1**>
+<**Figure-2**>
 
 
 
 
-Click on "**Review Policy**" and then give the policy a name, for example "**KMSWorkshop-AdditionalPermissions**".
+Click on "**Review Policy**" and then give the policy a name, for example "**KMSWorkshop-WebServerPermissions**".
 
 You can click now in "**Create Policy**". Once created, attach it to the role **KMSWorkshop-PublicInstanceInitRole**.
 
