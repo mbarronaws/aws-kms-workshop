@@ -31,47 +31,9 @@ When you are ready, please follow the following steps to create all the artifact
    resource(s) require capabilities: [AWS::IAM::Role]**" at the botton, and click "**Create Stack**". 
    
    The stack is now being created. If you got lost in the process, please look into the [CloudFormation Stack Creation documentation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-create-stack.html)
-   
-   
-   
 
 4. Once the CloudFormation Stack is complete, (use multiple tabs) open the IAM console (we'll use it later), and open the Systems Manager console, then navigate to Session Manager (on the left panel) and click Start Session. You should see 2 EC2 instances (a public and private) ready for you to connect and run CLI commands.
 
-5. Try connecting to the private EC2 instance and run the following command: 
-
-aws configure
-
-You should enter us-east-1 as the region. You can hit return through everything else.
-
-Your AWS CLI is configured and you can now run commands. 
-
-Try: 
-
-aws kms list-keys 
-
-The command should fail because you do not have permissions.
-
    If you need overall help with CloudFormation stacks, see [the CloudFormation documenation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html).
-
-
-6. Open the other tab and in the IAM console, create a new IAM policy "**KMSWorkshop-KMSAdminPolicy**" with the permissions listed in the screenshot below and attach it to the instance profile associated with the private EC2 instance you have launched (kmslabrole2-accountid). We do it to ensure that the AWS CLI on the instance has enough permissions to run AWS KMS operations.
-
-
-![alt text](/res/screenshot1.png)
-
-NOTE: This is NOT a very restrictive policy and not something you are likely to do in the real world (except in a test, lab, or demo account.) You will make it more restrictive later in the workshop. This policy allows an administrator (or power user) to manage and use all aspects of KMS except any permissions on specific keys. 
-
-![alt text](/res/screenshot2.png)
-
-Attach the policy:
-
-![alt text](/res/screenshot3.png)
-
-
-7. Now that a policy is associated that will allow administrative KMS CLI commands, open Session Manager and try running the following command: 
-
-aws kms list-keys
-
-The command should complete successfully.
 
 If you can connect to your instance then **You should now be ready to start with the workshop**, let's [Go to first section of workshop](https://github.com/aws-samples/aws-kms-workshop/blob/master/Section-1-Operating-with-AWS-KMS.md)
