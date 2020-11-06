@@ -54,7 +54,7 @@ The command should fail because you do not have permissions.
    If you need overall help with CloudFormation stacks, see [the CloudFormation documenation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html).
 
 
-6. Once the EC2 instance is up and running, open the other tab and in the IAM console, create a new IAM policy "**KMSWorkshop-KMSAdminPolicy**" with the permissions listed in the screenshot below and attach it to the instance profile associated with the private EC2 instance you have launched (kmslabrole2-accountid). We do it to ensure that the AWS CLI on the instance has enough permissions to run AWS KMS operations.
+6. Open the other tab and in the IAM console, create a new IAM policy "**KMSWorkshop-KMSAdminPolicy**" with the permissions listed in the screenshot below and attach it to the instance profile associated with the private EC2 instance you have launched (kmslabrole2-accountid). We do it to ensure that the AWS CLI on the instance has enough permissions to run AWS KMS operations.
 
 
 ![alt text](/res/screenshot1.png)
@@ -68,7 +68,7 @@ Attach the policy:
 ![alt text](/res/screenshot3.png)
 
 
-7. Once the instance is launched and contains the Role, and a policy associated that will allow administrative KMS CLI commands, open Session Manager and try running the following command: 
+7. Now that a policy is associated that will allow administrative KMS CLI commands, open Session Manager and try running the following command: 
 
 aws kms list-keys
 
