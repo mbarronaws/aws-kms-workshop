@@ -56,7 +56,7 @@ You will notice that the command will fail to run. Our current Role with Power U
 
 We need to provide with permission to generate a data key. 
 
-The process is the same as we have seen twice in the previous section of the workshop, please go back to it if you need to in the following link: "[Create the import material and encrypt it for the import](https://github.com/aws-samples/aws-kms-workshop/blob/master/Section-1-Operating-with-AWS-KMS.md#step-4---import-your-key-material)"
+The process is the same as we have seen twice in the previous section of the workshop, please go back to it if you need to in the following link: "[Create the import material and encrypt it for the import](https://github.com/mbarronaws/aws-kms-workshop/blob/master/Section-1-Operating-with-AWS-KMS.md#step-4---import-your-key-material)"
 
 Basically, you need to go back to the AWS console, in the services area navigate to IAM and go to "**Policies**". We are going to create a new policy and attach it to the Power user role.
 
@@ -305,7 +305,7 @@ $ aws kms decrypt --ciphertext-blob fileb://NewSecretsEncryptedFile.txt --encryp
 
 If you now take a look at the file we have created with the previous command "**NewSecretsDecryptedFile.txt**". The secret text is now back unencrypted and ready for us.
 
-You have completed the second section of the workshop. In the next section we will work with a real-life Web App and will try to implement best practices. You can now [navigate to the next section of the Workshop](https://github.com/aws-samples/aws-kms-workshop/blob/master/Section-3-Working-with-Web-App.md)
+You have completed the second section of the workshop. In the next section we will work with a real-life Web App and will try to implement best practices. You can now [navigate to the next section of the Workshop](https://github.com/mbarronaws/aws-kms-workshop/blob/master/Section-3-Working-with-Web-App.md)
 
 
 
