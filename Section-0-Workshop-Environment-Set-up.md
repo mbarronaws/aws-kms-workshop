@@ -37,15 +37,15 @@ When you are ready, please follow the following steps to create all the artifact
 
 4. Once the CloudFormation Stack is complete, (use multiple tabs) open the IAM console (we'll use it later), and open the Systems Manager console, then navigate to Session Manager (on the left panel) and click Start Session. You should see 2 EC2 instances (a public and private) ready for you to connect and run CLI commands.
 
-Try connecting to the private EC2 instance and run the following command: 
+5. Try connecting to the private EC2 instance and run the following command: 
 
-aws configure 
-(hit return, you do not need an access id)
-(hit return, you do not need a secret access key) 
-us-east-1 
-(hit return) 
+aws configure
 
-Your AWS CLI is configured and you can now run commands. Try running: 
+You should enter us-east-1 as the region. You can hit return through everything else.
+
+Your AWS CLI is configured and you can now run commands. 
+
+Try: 
 
 aws kms list-keys 
 
