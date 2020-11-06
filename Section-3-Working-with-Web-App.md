@@ -15,6 +15,26 @@ this section has the following parts:
 
 The Web App is very simple python web server that works as a shared file server, for internal employees for example. It allows to upload and download files to/from  S3. For downloads the Web App keeps a local file in the instance where Web App is running, prefixing the file with "localfile-". Remenber, our instance has a role with a policy attached to it that allow to read/write from S3.
 
+First, we need to repeat the steps in Environment Setup to attach the appropriate KMS policy to the instance profile. In a separate tab, open the IAM console, and create a restrictive KMS policy with the following permissions, then attach it to the KMSWorkshop-PublicInstanceInitRole.
+
+Basically, you need to go back to the AWS console, in the services area navigate to IAM and go to "**Policies**". We are going to create a new policy and attach it to the Power user role.
+
+As we did in the previous section, click on new "**Create Policy**", Select KMS as the service, go to the Actions area.
+In the "Write" section, select "**GenerateDataKey**" operation. Additionally select "**Encrypt**", "**Decrypt**" and the tagging operations **as you can see in image below**, we will need them for the nexts steps. and "**Any**" as resource. 
+
+![alt text](/res/S2F16.png)
+
+<**Figure-1**>
+
+
+
+
+Click on "**Review Policy**" and then give the policy a name, for example "**KMSWorkshop-AdditionalPermissions**".
+
+You can click now in "**Create Policy**". Once created, attach it to the role **KMSWorkshop-InstanceInitRole**.
+
+Next, reopen Session Manager, click Start Session, and connect to the **Public EC2 instance**
+
 Let's make a working directory for a our sample Web App and install the boto3 AWS Pyhon library library: Check we are in our home directory first.
 
 ```
