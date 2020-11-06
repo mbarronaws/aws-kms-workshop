@@ -17,7 +17,7 @@ When you are ready, please follow the following steps to create all the artifact
 
 
 
-2. Download the Workshop's **CloudFormation template on the (Save Link As) [following link](https://raw.githubusercontent.com/aws-samples/aws-kms-workshop/master/res/cf-workshoptemplate.txt)**. This template will create a Role named "**KMSWorkshop-InstanceInitRole**" and an Amazon S3 bucket named "**kmsworkshop-accountid**", where accountid is the identifier of your account.
+2. Download the Workshop's Cloudformation template to setup the entire stack **CloudFormation template on the (Save Link As) [following link](https://raw.githubusercontent.com/mbarronaws/aws-kms-workshop/master/kms-workshop-stack.yml)**. This template will create two EC2 instances, instance profiles, and an Amazon S3 bucket named "**kmsworkshop-accountid**", where accountid is the identifier of your account.
  
 
    Go to the AWS Console, navigate to "**CloudFormation**" Service and select "**Create Stack**" as you can see in figure below:
@@ -35,28 +35,23 @@ When you are ready, please follow the following steps to create all the artifact
    
    
 
-4. Once the CloudFormation Stack is Ready, launch an instance from Amazon Linux AMI on the VPC and subnet of your choice (but in the same region you started in). We will use this instance to work with the AWS CLI, so you can select a really small instance size, like "t2.micro". You can always create the VPC and Subnet when you launch the instance, at Step 3: "**Configure Instance Details**".
-  It is important that you make sure the instance has internet access in the subnet it is launched. You need to use an    
-  Internet Gateway and update the subnet Route table.
-  If you need help with these steps, make sure you check [this section of the AWS Documentation](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-getting-started.html).
+4. Once the CloudFormation Stack is complete, open the IAM console in another tab (we'll use it later), and open the Systems Manager console, then navigate to Session Manager (on the left panel) and click Start Session. You should see 2 EC2 instances (a public and private) ready for you to connect and run CLI commands.
 
    If you need overall help with CloudFormation stacks, see [the CloudFormation documenation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html).
 
 
-5. Make sure the security groups associated with the instance allow it to be accessible via SSH from your IP. **NOTE:**  you should restrict the initially created security group rule to be accesible only to your IP or the range of IPs from your LAN. Check the following [documentation](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html#SG_Changing_Group_Membership) if you need guidance.
-
-
-6. Once the EC2 instance is up and running, assign the "**KMSWorkshop-InstanceInitRole**" to the instance you have launched. We do it to ensure that the AWS CLI on the instance has enough permissions to run AWS KMS operations.
-If you need help with the operation, navigate to the EC2 service in the AWS console and take a look into picture below to locate the role attachment option. Optionally, use the following [AWS Security Blog article](https://aws.amazon.com/blogs/security/easily-replace-or-attach-an-iam-role-to-an-existing-ec2-instance-by-using-the-ec2-console/).
+6. Once the EC2 instance is up and running, open the other tab and in the IAM console, create a new IAM policy "**KMSWorkshop-KMSAdminPolicy**" and attach it to the instance profile associated with the private EC2 instance you have launched (kmslabrole2-accountid). We do it to ensure that the AWS CLI on the instance has enough permissions to run AWS KMS operations.
 
 
 ![alt text](/res/S0F0.png)
 
 
 
+7. Once the instance is launched and contains the Role, and a policy associated that will allow administrative KMS CLI commands, open Session Manager and try running the following command: 
 
-7. Once the instance is launched and contains the Role, try to connect to it via terminal. If you need help, [check the options here](https://docs.aws.amazon.com/quickstarts/latest/vmlaunch/step-2-connect-to-instance.html).
+aws kms list-keys
 
+The command should complete successfully.
 
 If you can connect to your instance then **You should now be ready to start with the workshop**, let's [Go to first section of workshop](https://github.com/aws-samples/aws-kms-workshop/blob/master/Section-1-Operating-with-AWS-KMS.md)
 
