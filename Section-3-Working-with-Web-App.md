@@ -67,6 +67,8 @@ $ sudo wget  https://raw.githubusercontent.com/aws-samples/aws-kms-workshop/mast
 
 You have downloaded a python application, named "**WebApp.py**", that will be our test Web App.
 
+**Note:** Recheck the security group associated with the server, ensure HTTP traffic is allowed. Add an ingress rule to the security group attached to the public instance allowing port 80 from your IP address (lookup your public IPv4 address) Use [this link to the Security Groups documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html). 
+
 We will need to obtain the instance IP to connect to it from the Internet. We will get it from the metadata of the instance. If you need more information about instance metadata, please look into this [section of the AWS documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html).
 
 ```
@@ -84,8 +86,6 @@ $ sudo python WebApp.py 80
 
 Go to your browser now and navigate to the Web App in the IP you obtained in the previous step:  http://X.8.X.17
 
-
-**Note:** if you run into issues with reaching the server, it may be worthy to recheck the security group associated with the server, ensure HTTP traffic is allowed. Use [this link to the Security Groups documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html). 
 
 ![alt text](/res/S3F1.png)
 <**Figure-1**>
