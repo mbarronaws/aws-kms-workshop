@@ -15,7 +15,7 @@ this section has the following parts:
 
 The Web App is very simple python web server that works as a shared file server, for internal employees for example. It allows to upload and download files to/from  S3. For downloads the Web App keeps a local file in the instance where Web App is running, prefixing the file with "localfile-". Remenber, our instance has a role with a policy attached to it that allow to read/write from S3.
 
-First, modify the security group associated with the server to ensure HTTP traffic is allowed. Add an ingress rule to the security group attached to the public instance allowing port 80 from your IP address (lookup your public IPv4 address) 
+First, modify the security group associated with the server to ensure HTTP traffic is allowed. Add an ingress rule to the security group attached to the Public EC2 instance allowing port 80 from your IP address (lookup your public IPv4 address) 
 
 Use [this link to review the Security Groups documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html). 
 
