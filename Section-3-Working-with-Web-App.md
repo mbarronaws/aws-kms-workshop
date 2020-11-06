@@ -194,7 +194,7 @@ Key policies are the primary resource for controlling "who" has access to do "wh
 You have a full description about them in the following [AWS KMS link](https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html), in case you want to go deeper - and for the importance of the topic,  you should. 
 We are going to work with some practical examples. 
 
-Up to now, the assigned IAM  role ("**KMSWorkshop-InstanceInitRole**") of our working instance allows us to perform many things in AWS KMS.  Following best practices like "**Least Privilege**" and "**Separation of Duties**", it can be, for example, that our instance is meant to be used only for uploading data with server side encryption, but not decrypt it and download it.
+Up to now, the assigned IAM  role ("**KMSWorkshop-PublicInstanceInitRole**") of our working instance allows us to perform many things in AWS KMS.  Following best practices like "**Least Privilege**" and "**Separation of Duties**", it can be, for example, that our instance is meant to be used only for uploading data with server side encryption, but not decrypt it and download it.
 Maybe the download and decrypt operation needs to be done from another instance with more specific security constraints. 
 
 How can we comply with these requirements? We will use two main resources:
@@ -273,7 +273,7 @@ Now try to upload a new file to S3. It will succeed it. Now try and download it.
 
 Now this role is able to encrypt but not to decrypt. Furthermore, we want to enforce "**Least Privilege**" access and ensure that the encryption Role, providing capability to encrypt, is only used from our account, and not subject to Cross-Account Role access policies that could grant access to the CMK. For that, we will use a handy Key policy.
 
-We need to identify our current role "**KMSWorkshop-InstanceInitRole**" ARN in order to link it to the key policy. Go back to the console, IAM service, click Roles. Search for the role currently assigned to the instance: **KMSWorkshop-InstanceInitRole** and click on it.  In the upper part of the screen you have the associated ARN. As part of the Role ARN you have your account Id. This is the generic structure: 
+We need to identify our current role "**KMSWorkshop-PublicInstanceInitRole**" ARN in order to link it to the key policy. Go back to the console, IAM service, click Roles. Search for the role currently assigned to the instance: **KMSWorkshop-PublicInstanceInitRole** and click on it.  In the upper part of the screen you have the associated ARN. As part of the Role ARN you have your account Id. This is the generic structure: 
 
 ```
 arn:aws:iam::ACCOUNT-ID-WITHOUT-HYPHENS:role/ROLE-NAME
@@ -308,7 +308,7 @@ Modify the current policy with this one:
       "Sid": "Allow for Use only within our Account",
       "Effect": "Allow",
       "Principal": {
-        "AWS": "arn:aws:iam::your-acount-id:role/KMSWorkshop-InstanceInitRole"
+        "AWS": "arn:aws:iam::your-acount-id:role/KMSWorkshop-PublicInstanceInitRole"
       },
       "Action": "kms:*",
       "Resource": "*",
@@ -350,7 +350,7 @@ With this policy we will ensure that only instances that have the appropriate ro
       "Sid": "Allow for Use only within our Account",
       "Effect": "Deny",
       "NotPrincipal": { 
-        "AWS": [ "arn:aws:iam::your-acount-id:role/KMSWorkshop-InstanceInitRole", "arn:aws:iam::your-acount-id:root"]
+        "AWS": [ "arn:aws:iam::your-acount-id:role/KMSWorkshop-PublicInstanceInitRole", "arn:aws:iam::your-acount-id:root"]
       },
       "Action": "kms:*",
       "Resource": "*",
@@ -465,7 +465,7 @@ A sample policy would be like the one below. Please ensure you understand the co
       "Sid": "Allow for Use only within our VPC",
       "Effect": "Deny",
       "Principal": {
-        "AWS": "arn:aws:iam::your-account-id:role/KMSWorkshop-InstanceInitRole"
+        "AWS": "arn:aws:iam::your-account-id:role/KMSWorkshop-PublicInstanceInitRole"
       },
       "Action": [
         "kms:Encrypt",
