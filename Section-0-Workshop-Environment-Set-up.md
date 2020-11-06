@@ -36,4 +36,4 @@ When you are ready, please follow the following steps to create all the artifact
 
    If you need overall help with CloudFormation stacks, see [the CloudFormation documenation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html).
 
-If you can connect to your instance then **You should now be ready to start with the workshop**, let's [Go to first section of workshop](https://github.com/aws-samples/aws-kms-workshop/blob/master/Section-1-Operating-with-AWS-KMS.md)
+If you can connect to your instance then **You should now be ready to start with the workshop**, let's [Go to first section of workshop](https://github.com/mbarronaws/aws-kms-workshop/blob/master/Section-1-Operating-with-AWS-KMS.md)
