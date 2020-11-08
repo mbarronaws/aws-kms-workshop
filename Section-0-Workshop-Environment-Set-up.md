@@ -24,7 +24,7 @@ When you are ready, please follow the following steps to create all the artifact
    
    
    
-![alt text](/res/S0F1.png)
+![alt text](/res/screenshot10.png)
    
    
 3. Then, in the "**Specify Template**" area, select "**Upload Template**" and browse for the template we downloaded just        before. Click "**Next**" and give the stack a name, like "KMSWorkshop-Stack". Hit "**Next**". Leave the default values that appear in this new page and hit "**Next**" again. In this new page, make sure you click the checkbox "**The following  
